@@ -1,1 +1,1 @@
-yum_package "imagemagick"
+yum_package "ImageMagick"
