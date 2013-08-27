@@ -1,8 +1,8 @@
-chef_gem 'hipchat'
-chef_gem 'mixlib-shellout'
+# chef_gem 'hipchat'
+# chef_gem 'mixlib-shellout'
 
-require 'rubygems'
-require 'hipchat'
+# require 'rubygems'
+# require 'hipchat'
 
 node[:deploy].each do |application, deploy|
 
