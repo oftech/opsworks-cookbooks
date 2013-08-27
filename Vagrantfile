@@ -94,8 +94,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
           :deploy_to => '/vagrant'
         }
       },
-      :stack => {
-        :name => 'posboss-staging'
+      :opsworks => {
+        :stack => {
+          :name => 'posboss-staging'
+        }
       }
     }
     chef.node_name = 'foo'

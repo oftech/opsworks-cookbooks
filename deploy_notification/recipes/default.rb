@@ -7,7 +7,7 @@
 node[:deploy].each do |application, deploy|
 
   Chef::Log.info("Getting commit info for app #{application}")
-  stack_name = node[:stack][:name]
+  stack_name = node[:opsworks][:stack][:name]
   current_dir = "#{deploy[:deploy_to]}/current"
   previous_deploy_dir =  Dir.entries("#{deploy[:deploy_to]}/releases").sort[-2]
 
@@ -39,6 +39,8 @@ node[:deploy].each do |application, deploy|
 	# message = "Commit #{commit_sha} from branch '#{commit_branch}' was deployed to #{stack_name}"
 	# client = HipChat::Client.new('c9bd281c9f01e292cbbb8fe3199fa6')
 	# client['PosBoss'].send('Deploy', message, :color => 'red')
+	uri = URI.parse("http://api.random.com")
+	http = Net::HTTP.new(uri.host, uri.port)
 
 	Chef::Log.info("Writing build info file for app #{application}")
   file "#{current_dir}/public/buildinfo.txt" do
