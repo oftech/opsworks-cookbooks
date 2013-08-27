@@ -16,3 +16,7 @@ tmp
 .yardoc
 _yardoc
 doc/
+
+.vagrant
+_notes
+buildinfo.txt
