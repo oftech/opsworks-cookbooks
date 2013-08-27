@@ -31,8 +31,8 @@ node[:deploy].each do |application, deploy|
 
 	uri = URI.parse('http://api.hipchat.com/v1/rooms/message')
 	response = Net::HTTP.post_form(uri, {
-		'auth_token' => 'c9bd281c9f01e292cbbb8fe3199fa6',
-		'room_id' => 'Dogs Inc',
+		'auth_token' => '29fca049adabd329cdb72b94222916',
+		'room_id' => 'PosBoss',
 		'message' => message,
 		'from' => 'Deploy',
 		'message_format' => 'text'
