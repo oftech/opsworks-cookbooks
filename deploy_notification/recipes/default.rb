@@ -34,7 +34,7 @@ node[:deploy].each do |application, deploy|
 		'auth_token' => '29fca049adabd329cdb72b94222916',
 		'room_id' => 'PosBoss',
 		'message' => message,
-		'from' => 'Deploy',
+		'from' => 'posbot',
 		'message_format' => 'text'
 	})
 
