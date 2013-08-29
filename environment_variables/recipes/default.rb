@@ -3,9 +3,10 @@ Chef::Log.info("Running evrionment variables")
 node[:deploy].each do |application, deploy|
 
   if node[:env]
-    Chef::Log.info("Env variables set, generating environment_variables.rb")
 
-    template "#{deploy[:deploy_to]}/current/config/environment_variables.rb" do
+    env_file_path = "#{release_path}/config/environment_variables.rb"
+    Chef::Log.info("Env variables set, writing to #{env_file_path}")
+    template env_file_path do
       cookbook "environment_variables"
       source "environment_variables.rb.erb"
       mode "0660"
