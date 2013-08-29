@@ -4,7 +4,7 @@ node[:deploy].each do |application, deploy|
 
   if node[:env]
 
-    env_file_path = "#{release_path}/config/environment_variables.rb"
+    env_file_path = "#{deploy[:deploy_to]}/shared/config/environment_variables.rb"
     Chef::Log.info("Env variables set, writing to #{env_file_path}")
     template env_file_path do
       cookbook "environment_variables"
