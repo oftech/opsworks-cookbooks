@@ -1,0 +1,5 @@
+<% @env.each_pair do |env_var, var_val| %>
+  <% unless env_var == 'PORT' || env_var == 'RACK_ENV' %>
+    ENV['<%= env_var %>'] = '<%= var_val %>'
+  <% end %>
+<% end %>
