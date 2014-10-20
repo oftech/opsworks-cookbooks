@@ -7,9 +7,7 @@ node[:deploy].each do |application, deploy|
   Chef::Log.info("Environment: #{environment_variables}")
 
   environment_variables.each_pair do |key, value|
-    env "#{key}" do
-      value "#{value}"
-    end
+    ENV[key] = value
   end
 
 end
