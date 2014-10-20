@@ -6,8 +6,10 @@ node[:deploy].each do |application, deploy|
 
   Chef::Log.info("Environment: #{environment_variables}")
 
-  execute "SET ENV VARS TO SHELL" do
-    environment(environment_variables)
+  environment_variables.each_pair do |key, value|
+    env "#{key}" do
+      value "#{value}"
+    end
   end
 
 end
