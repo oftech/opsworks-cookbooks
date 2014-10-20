@@ -1,9 +1,14 @@
-Chef::Log.info("Running evrionment variables recipes")
+node[:deploy].each do |application, deploy|
+  Chef::Log.info("Deploy for application #{application} as #{deploy[:application_type]} app")
 
-deploy = params[:deploy_data]
-application = params[:app]
-environment = params[:env]
+  node.each do | key, value |
+    Chef::Log.info( "#{key} = #{value}" )
+  end
 
-Chef::Log.info("deploy: #{deploy}")
-Chef::Log.info("Applicaiton: #{application}")
-Chef::Log.info("Environment: #{environment}")
+  environment_variables = deploy[:environment_variables]
+  Chef::Log.info("deploy: #{deploy}")
+  Chef::Log.info("Environment: #{environment_variables}")
+
+end
+
+
