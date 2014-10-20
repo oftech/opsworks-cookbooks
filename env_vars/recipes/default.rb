@@ -7,9 +7,10 @@ node[:deploy].each do |application, deploy|
   Chef::Log.info("Environment: #{environment_variables}")
 
   environment_variables.each_pair do |key, value|
-    ENV[key] = value
+    magic_shell_environment "#{key}" do
+      value "#{value}"
+    end
   end
-
 end
 
 
