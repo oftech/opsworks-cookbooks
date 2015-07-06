@@ -43,4 +43,6 @@ http {
 
   include <%= node[:nginx][:dir] %>/conf.d/*.conf;
   include <%= node[:nginx][:dir] %>/sites-enabled/*;
+
+  ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
 }
