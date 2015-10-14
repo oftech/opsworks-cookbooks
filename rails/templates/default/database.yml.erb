@@ -14,7 +14,7 @@
   pool: <%= @database[:pool].to_i.inspect %>
 <% end -%>
 <% if @database[:sslca] -%>
-  sslca: <%= @database[:sslca].to_i.inspect %>
+  sslca: <%= @database[:sslca] %>
 <% end -%>
 
 <% end %>
