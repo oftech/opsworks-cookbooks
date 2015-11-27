@@ -29,6 +29,8 @@ else
     ossec_server << n['ipaddress']
   end
 end
+ossec_server = ['172.30.0.121']
+
 
 node.set['ossec']['user']['install_type'] = "agent"
 node.set['ossec']['user']['agent_server_ip'] = ossec_server.first
