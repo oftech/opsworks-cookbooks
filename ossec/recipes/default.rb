@@ -17,7 +17,7 @@
 # limitations under the License.
 #
 
-include_recipe "build-essential"
+# include_recipe "build-essential"
 
 ossec_dir = "ossec-hids-#{node['ossec']['version']}"
 
